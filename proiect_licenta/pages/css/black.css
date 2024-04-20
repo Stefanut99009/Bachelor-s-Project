@@ -1,0 +1,64 @@
+:root {
+    --background-color-light: #fff;
+    /* Default light background color */
+    --background-color-dark: #333;
+    /* Dark background color */
+    --text-color-light: #000;
+    /* Default light text color */
+    --text-color-dark: #fff;
+    /* Dark text color */
+}
+
+body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+    z-index: 100;
+}
+
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.dark-mode-toggle label {
+    display: block;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    position: relative;
+}
+
+.dark-mode-toggle label:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2.5px;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked+label {
+    background-color: #ccc;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked+label:before {
+    transform: translateX(25px) translateY(-50%);
+    background-color: #000;
+}
