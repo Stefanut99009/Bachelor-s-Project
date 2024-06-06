@@ -1,0 +1,50 @@
+.something {
+    display: grid;
+    place-items: center;
+}
+.form {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0);
+
+    width: 80%;
+    border-radius: 5%;
+}
+.form .p .roca {
+    display: inline-flex;
+    justify-content: space-between;
+    top: 40%;
+    position: relative;
+}
+.form .p {
+    display: inline-flex;
+    justify-content: space-between;
+    top: 40%;
+    width: 80%;
+    height: 100%;
+}
+
+.img1 {
+    place-self: center;
+    width: 80%;
+    height: 100px;
+}
+.img2 {
+    place-self: center;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.buton {
+    text-decoration: none;
+    border: none;
+    color: none;
+    width: fit-content;
+    place-self: center;
+    background-color: rgba(216, 12, 12, 0);
+    color: rgba(83, 200, 239, 0.551);
+    text-decoration-line: underline;
+}
