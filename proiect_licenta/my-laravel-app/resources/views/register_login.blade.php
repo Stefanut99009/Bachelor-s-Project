@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/black.css">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('css/black.css')}}">
 
 </head>
 
@@ -21,9 +21,9 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
-      <form action="" method="post">
-        <input type="text" name="email2" id="email2" placeholder="Enter your email">
-        <input type="password" name="password3" id="password3" placeholder="Enter your password">
+      <form action="{{ route('login.submit') }}" method="POST">
+        <input type="text" name="email2" id="email2" placeholder="Enter your email" required>
+        <input type="password" name="password3" id="password3" placeholder="Enter your password" required>
         <a href="#">Forgot password?</a>
         <input type="submit" class="button2" value="Login">
       </form>
@@ -35,7 +35,7 @@
     </div>
     <div class="registration form">
       <header>Sign up</header>
-      <form action="" method="post">
+      <form action="{{ route('register.submit') }}" method="POST">
         <input type="text" name="email" id="email" placeholder="Enter your email" title="Example ceva@yahoo.com" pattern="^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|yahoo\.ro|gmail\.ro)$" required>
         <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required placeholder="Create a password">
         <input type="password" name="password2" id="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must match" required placeholder="Confirm your password">
@@ -50,10 +50,10 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="scripts/black.js"></script>
+  <script type="text/javascript" src="{{asset('scripts/black.js')}}"></script>
 @php
-  include('fake_errors/before_welcome.php');
-  include('fake_errors/new_user.php');
+  @include(public_path('connection_to_database/before_welcomne'));
+  @include(public_path('connection_to_database/new_user'));
 @endphp
 </body>
 
