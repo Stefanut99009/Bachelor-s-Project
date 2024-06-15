@@ -1,45 +1,20 @@
 <?php
 
-
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 
-Route::get('/mainpage', function () {
-    return view('mainpage');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/download', function () {
-    return view('download');
-});
-Route::get('/post', function () {
-    return view('post');
-});
 Route::get('/', function () {
-    return view('register_login');
-});
-Route::get('/register_login', function () {
-    return view('register_login');
-});
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
-
-Route::get('/socialmedia', function () {
-    return view('socialmedia');
-});
-Route::get('/talkpage', function () {
-    return view('talkpage');
-});
-Route::get('/todopage', function () {
-    return view('todopage');
-});
-Route::get('/userpage', function () {
-    return view('userpage');
-});
-Route::get('/watchvideo', function () {
-    return view('watchvideo');
+    return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

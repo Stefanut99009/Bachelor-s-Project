@@ -98,7 +98,7 @@ return [
             'driver' => 'sqlsrv',
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', 'DESKTOP-NQ0QJUP\SQLEXPRESS'),
-            'port' => env('DB_PORT', '1433'),
+           // 'port' => env('DB_PORT', '1433'),
             'database' => env('DB_DATABASE', 'to_do_page'),
             'username' => env('DB_USERNAME', ''),
             'password' => env('DB_PASSWORD', ''),
