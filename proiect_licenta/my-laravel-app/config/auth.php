@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'ceva' => [
+            'driver' => 'session',
+            'provider' => 'logare'
+        ]
     ],
 
     /*
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+        'logare' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Logare::class),
         ],
 
         // 'users' => [

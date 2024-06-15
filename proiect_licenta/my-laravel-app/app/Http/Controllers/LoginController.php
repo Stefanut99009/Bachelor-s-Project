@@ -3,21 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Logare;
 
 class LoginController extends Controller
 {
-    public function login(Request $request){
-        $email = $request->input('email2');
-        $password = $request->input('password3');
-        $hashed_password = Hash::make($password);
-    $query = DB::select('SELECT email, password FROM logare WHERE email = ? AND password = ?', [$email, $hashed_password]);
+    public function showLoginForm()
+    {
+        return view('register_login');
+    }
 
-if (!empty($query)) {
-    return redirect()->route('userpage'); // Replace 'home' with the name of the route you want to redirect to
-} else {
-    return redirect()->back()->with('error', 'Invalid credentials.');
-}
-}
+    public function login(Request $request)
+    {
+        $validator = $this->validateLogin($request);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::guard('ceva')->attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+            return redirect()->route('contact')->with('success', 'Login successful.');
+        } else {
+            return redirect()->back()->with('error', 'Invalid credentials.')->withInput();
+        }
+
+    }
+
+    private function validateLogin(Request $request)
+    {
+        return Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login.form')->with('success', 'Logout successful.');
+    }
 }
