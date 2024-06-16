@@ -9,6 +9,7 @@ use App\Models\Logare;
 
 class LoginController extends Controller
 {
+<<<<<<< HEAD
     public function showLoginForm()
     {
         return view('register_login');
@@ -43,5 +44,25 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect()->route('login.form')->with('success', 'Logout successful.');
+=======
+    public function login(Request $request)
+    {
+        $email = $request->input('email2');
+        $password = $request->input('password3');
+
+        $result = DB::select('SELECT email, password FROM logare WHERE email = ?', [$email]);
+
+        if (!empty($result)) {
+            $stored_hashed_password = $result[0]->password;
+
+            if (Hash::check($password, $stored_hashed_password)) {
+                return redirect()->route('userpage'); 
+            } else {
+                return redirect()->back()->with('error', 'Invalid credentials.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Invalid credentials.');
+        }
+>>>>>>> e5b14b87ea5ce3aa45dc33eedaea8feae6151573
     }
 }
