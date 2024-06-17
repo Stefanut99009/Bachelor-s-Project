@@ -29,7 +29,7 @@
             <div class="sidebar_inner">
                 <ul>
                     <li>
-                        <a href="{{ url('userpage') }}">
+                        <a href="{{ ('userpage') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
                                     <path
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('mainpage') }}">
+                        <a href="{{ route('mainpage') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-dpad-fill" viewBox="0 0 16 16">
                                     <path
@@ -53,7 +53,7 @@
 
 
                     <li>
-                        <a href="{{ url('watchvideo') }}">
+                        <a href="{{ route('watchvideo') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-badge-hd-fill" viewBox="0 0 16 16">
                                     <path
@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('talkpage') }}">
+                        <a href="{{ route('talkpage') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                     <path
@@ -75,7 +75,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('socialmedia') }}">
+                        <a href="{{ route('socialmedia') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-cast" viewBox="0 0 16 16">
                                     <path
@@ -87,7 +87,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('post') }}">
+                        <a href="{{ route('post') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -99,7 +99,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('todopage')}}">
+                        <a href="{{route('todopage')}}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -113,7 +113,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('download')}}">
+                        <a href="{{route('download')}}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-cloud-arrow-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -125,7 +125,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('contact')}}">
+                        <a href="{{route('contact')}}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
                                     <path
@@ -183,7 +183,7 @@
     <script>
         document.getElementById('logoutBtn').addEventListener('click', function() {
 
-            var newUrl = "{{url('register_login')}}";
+            var newUrl = {{route('logout')}};
             history.replaceState(null, null, newUrl);
 
             window.location.href = newUrl;
