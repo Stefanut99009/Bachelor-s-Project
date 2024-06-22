@@ -23,9 +23,9 @@ class LoginController extends Controller
         }
 
         $credentials = $request->only('email', 'password');
-
+        session()->put('email', $credentials['email']);
         if (Auth::guard('ceva')->attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
-            return redirect()->route('contact')->with('success', 'Login successful.');
+            return redirect()->route('form')->with('success', 'Login successful.');
         } else {
             return redirect()->back()->with('error', 'Invalid credentials.')->withInput();
         }
@@ -45,6 +45,6 @@ class LoginController extends Controller
         Auth::logout();
         return redirect()->route('login.form')->with('success', 'Logout successful.');
 
-    
+
     }
 }
