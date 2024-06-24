@@ -17,6 +17,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:logare,email',
             'password' => 'required|min:8|confirmed',
@@ -36,10 +37,10 @@ class RegisterController extends Controller
             'date' => $request->input('date'),
             'gender' => $request->input('gender'),
         ]);
-
         if ($logare) {
+            session()->put('email2', $request->input('email'));
             Log::info('User registered successfully', ['user' => $logare]);
-            return redirect()->route('login.form')->with('success', 'Registration successful. Please log in.');
+            return redirect()->route('form.form')->with('success', 'Registration successful. Please log in.');
         } else {
             Log::error('Registration failed');
             return redirect()->back()->with('error', 'Registration failed. Please try again.');

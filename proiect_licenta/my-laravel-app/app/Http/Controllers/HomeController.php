@@ -15,6 +15,6 @@ public function variables(){
     $ceva=Logare::select('age','gender','date')->where('email',$variable)->first();
     $age=$ceva['age'];
     $gender=$ceva['gender'];
-    $date=date('d-m-Y',strtotime($ceva['date']));
+    $date=date('d-m-Y',$ceva['date']);
 }
 }
