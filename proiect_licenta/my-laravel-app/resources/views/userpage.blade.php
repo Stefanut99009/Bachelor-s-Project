@@ -174,20 +174,23 @@
         <span class="Gender">Gender:Something</span>
         <input class="buton" type="submit" value="Change background/image">
 -->
-    <div class="row py-5 px-4">
+    <div class=" ">
         <div class="col-md-5 mx-auto"> <!-- Profile widget -->
-            <div class="bg-white shadow rounded overflow-hidden">
-                <div class="px-4 pt-0 pb-4 cover">
+            <div class=" shadow rounded ">
+                <div class="  ">
+                  <img src="{{ $backgroundImageUrl }}" alt="Your Image"width="600" height="230" class="rounded  img-thumbnail">
+
                     <div class="media align-items-end profile-head">
-                        <div class="profile mr-3"><img
-                                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                                alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="#"
-                                class="btn btn-outline-dark btn-sm btn-block">Edit profile</a></div>
-                        <div class="media-body mb-5 text-white">
-                            @php echo "<h4 class='mt-0 mb-0'> $email </h4>"@endphp
+                        <div class="profile "><img src="{{ $imageUrl }}" alt="image" width="130" height="130"
+                                class="rounded  img-thumbnail">
+                                <a href="#"
+                                class="btn btn-outline-secondary btn-sm btn-block">Edit profile</a>
+                            </div>
+                        <div class="media-body ">
+                            <h4 class='mt-0 mb-0'> {{ $user->username }} </h4>
 
 
-                            @php echo "<p class='small mb-4'> <i class='fas fa-map-marker-alt mr-2'></i> $location </p>"@endphp
+
                         </div>
                     </div>
                 </div>
@@ -217,14 +220,15 @@
             <h5>About</h5>
 
 
-            @php             echo "<p class='font-italic mb-0'> $var </p>
+            <p class='font-italic mb-0'> {{ $user->date }} </p>
 
             <br>
-            <p class='font-italic mb-0'>$gender</p>
+            <p class='font-italic mb-0'> {{ $user->gender }}</p>
             <br>
-            <p class='font-italic mb-0'>$default_level</p>
+            <p class='font-italic mb-0'>lvl {{ $user->lvl }}</p>
             <br>
-            <p class='font-italic mb-0'>$more_details</p>"; @endphp
+            <p class='font-italic mb-0'>xp {{ $user->experience }}</p>
+            <p class='font-italic mb-0'>{{ $user->describe_yourself }}</p>
 
             <br>
             <br>

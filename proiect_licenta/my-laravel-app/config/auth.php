@@ -43,7 +43,11 @@ return [
         'ceva' => [
             'driver' => 'session',
             'provider' => 'logare'
-        ]
+        ],
+        'uite' => [
+            'driver' => 'session',
+            'provider' => 'dupa_logare'
+        ],
     ],
 
     /*
@@ -71,6 +75,10 @@ return [
         'logare' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\Logare::class),
+        ],
+        'dupa_logare' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Dupa_Logare::class),
         ],
 
         // 'users' => [

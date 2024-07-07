@@ -16,7 +16,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WatchVideoController;
 use App\Http\Controllers\OtherController;
-
+use App\Http\Controllers\FormBeforeLogin;
+use App\Livewire\Chat\Index;
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register.form');
@@ -29,12 +30,15 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/socialmedia', [SocialMediaController::class, 'socialmedia'])->name('socialmedia');
 Route::get('/talkpage', [TalkPageController::class, 'talkpage'])->name('talkpage');
-
+Route::get('/form',[FormBeforeLogin::class,'ceva'])->name('form.form');
+Route::post('/form', [FormBeforeLogin::class,'altceva'])->name('form');
 Route::get('/todopage', [ToDoPageController::class, 'todopage'])->name('todopage');
 Route::get('/userpage', [UserPageController::class, 'userpage'])->name('userpage');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 Route::get('/watchvideo', [WatchVideoController::class, 'watchvideo'])->name('watchvideo');
-
+Route::get('/chat','App\Http\Controllers\Pusher Controller@index');
+Route::post('/broadcast', 'App\Http\Controllers\Pusher Controller@broadcast');
+Route::post('/receive', 'App\Http\Controllers\Pusher Controller@receive');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

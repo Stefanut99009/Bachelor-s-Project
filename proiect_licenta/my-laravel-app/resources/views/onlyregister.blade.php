@@ -46,7 +46,7 @@
 
         <div class="signup">
           <span class="signup">Already have an account?
-            <a href="{{ route('login.form') }}">Login</a>
+            <a href="{{ route('form.form') }}">Login</a>
           </span>
         </div>
     </div>

@@ -136,7 +136,7 @@
   <script>
     document.getElementById('logoutBtn').addEventListener('click', function() {
 
-      var newUrl = {{route('logouut')}};
+      var newUrl = {{route('logout')}};
       history.replaceState(null, null, newUrl);
 
       window.location.href = newUrl;

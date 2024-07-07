@@ -1,66 +1,68 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Logare;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+
 class FormBeforeLogin extends Controller
 {
-    public function ceva(){
+    public function ceva()
+    {
         return view("form");
     }
-    public function altceva($request){
+
+    public function altceva(Request $request)
+    {
+        Log::info('Incoming request', ['request' => $request->all()]);
+
         $validator = Validator::make($request->all(), [
-            'lvl' => 'required|min:1',
-            'username' => 'required|min:8',
-            'experience' => 'required|min:0',
-            'describe_gender' => 'required|min:0|max:10',
-            ]);
+            'lvl' => 'required|integer|min:1',
+            'username' => 'required|string|min:8',
+            'experience' => 'required|integer|min:0',
+            'describe_yourself' => 'required|string|min:0',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'background_image' => 'required|image|mimes:jpeg,png,jpg,gif',
+        ]);
 
         if ($validator->fails()) {
             Log::info('Validation failed', ['errors' => $validator->errors()]);
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $logare = Logare::create([
+        $email = $request->session()->get('email2');
+        $form = Logare::where('email', $email)->first();
+
+        if (!$form) {
+            Log::error('User not found');
+            return redirect()->back()->with('error', 'User not found. Please try again.');
+        }
+
+        $filePath1 = $form->image;
+        $filePath2 = $form->background_image;
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filePath1 = $file->store('photos', 'public');
+        }
+
+        if ($request->hasFile('background_image')) {
+            $file = $request->file('background_image');
+            $filePath2 = $file->store('photos', 'public');
+        }
+
+        $form->update([
             'lvl' => $request->input('lvl'),
-            'username' => $request->input('username'),
             'experience' => $request->input('experience'),
-            'describe_gender' => $request->input('describe_gender'),
+            'username' => $request->input('username'),
+            'image' => $filePath1,
+            'background_image' => $filePath2,
+            'describe_yourself' => $request->input('describe_yourself')
         ]);
-        $data= new Logare();
 
-        if($request->file('image')){
-            $file= $request->file('image');
-            $filename= date('dmY').$file->getClientOriginalName();
-            $file-> move(public_path('public/Image'), $filename);
-            $data['image']= $filename;
-        }
-        if($request->file('background_image')){
-            $file= $request->file('background_image');
-            $filename= date('dmY').$file->getClientOriginalName();
-            $file-> move(public_path('public/Image'), $filename);
-            $data['background_image']= $filename;
-        }
-        $data->save();
-
-        if ($logare) {
-            Log::info('User registered successfully', ['user' => $logare]);
-            return redirect()->route('form.form')->with('success', 'Registration successful. Please log in.');
-        } else {
-            Log::error('Registration failed');
-            return redirect()->back()->with('error', 'Registration failed. Please try again.');
-        }
-
-//Store image
-
-    }
-    public function storeImage(Request $request){
-
-
+        Log::info('User registered successfully', ['user' => $form]);
+        return redirect()->route('userpage')->with('success', 'Registration successful. Please log in.');
     }
 }

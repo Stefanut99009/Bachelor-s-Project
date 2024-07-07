@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required|min:8',
             'date' => 'required|date',
-            'gender' => 'required|in:male,female,other',
+            'gender' => 'required|in:male,female,something,other',
         ]);
 
         if ($validator->fails()) {

@@ -14,6 +14,6 @@ class Logare extends Authenticatable
     protected $table = 'logare';
     public $timestamps = false;
     protected $fillable = [
-        'email', 'password', 'date', 'gender',
+        'email', 'password', 'date', 'gender','image', 'lvl', 'experience', 'background_image','describe_yourself','username'
     ];
 }
