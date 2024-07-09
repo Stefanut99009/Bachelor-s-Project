@@ -1,24 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>Chat Laravel Pusher | Edlin App</title>
+    <link rel="icon" href="https://assets.edlin.app/favicon/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- JavaScript -->
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- End JavaScript -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('css/ceva.css') }}">
+    <!-- End CSS -->
+
 </head>
+
 <body>
-    <div
-    class=" fixed h-full flex bg-white border lg:shadow-sm overflow-hidden inset-0 lg:top-16 lg:inset-x-2 m-auto lg:h-[90%] rounded-t-lg">
-    <div class="relative w-full md:w-[320px] xl:w-[400px] overflow-y-auto shrink-0 h-full border">
-    </div>
-    <div class="relative hidden w-full h-full overflow-y-auto md:grid border-1" style="contain:content;">
-        <div class="flex flex-col justify-center gap-3 m-auto text-center">
-            <h4 class="text-lg font-medium"> Chose a conversation to start chatting </h4>
+    <div class="chat">
+
+        <!-- Header -->
+        <div class="top">
+            <img src="https://assets.edlin.app/images/rossedlin/03/rossedlin-03-100.jpg" alt="Avatar">
+            <div>
+                <p>Ross Edlin</p>
+                <small>Online</small>
+            </div>
         </div>
+        <!-- End Header -->
+
+        <!-- Chat -->
+        <div class="messages">
+            @include('receive', ['message' => "Hey! What's up!  👋"])
+            @include('receive', [
+                'message' => 'Ask a friend to open this link and you can chat with them!',
+            ])
+        </div>
+        <!-- End Chat -->
+
+        <!-- Footer -->
+        <div class="bottom">
+            <form>
+                <input type="text" id="message" name="message" placeholder="Enter message..." autocomplete="off">
+                <button type="submit"></button>
+            </form>
+        </div>
+        <!-- End Footer -->
+
     </div>
-</div>
-
-
 </body>
+
+<script>
+    const pusher = new Pusher('{{ config('broadcasting.connections.pusher.key') }}', {
+        cluster: 'eu'
+    });
+    const channel = pusher.subscribe('public');
+
+    //Receive messages
+    channel.bind('chat', function(data) {
+        $.post("/receive", {
+                _token: '{{ csrf_token() }}',
+                message: data.message,
+            })
+            .done(function(res) {
+                $(".messages > .message").last().after(res);
+                $(document).scrollTop($(document).height());
+            });
+    });
+
+    //Broadcast messages
+    $("form").submit(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: "/broadcast",
+            method: 'POST',
+            headers: {
+                'X-Socket-Id': pusher.connection.socket_id
+            },
+            data: {
+                _token: '{{ csrf_token() }}',
+                message: $("form #message").val(),
+            }
+        }).done(function(res) {
+            $(".messages > .message").last().after(res);
+            $("form #message").val('');
+            $(document).scrollTop($(document).height());
+        });
+    });
+</script>
+
 </html>

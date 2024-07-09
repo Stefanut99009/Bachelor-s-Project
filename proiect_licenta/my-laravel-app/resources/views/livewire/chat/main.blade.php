@@ -1,25 +1,31 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/black.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <link rel="stylesheet" href="{{ asset('css/userpage.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
 
 </head>
-
 <body>
 
-    <div class="wrapper hover_collapse">
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+</head>
+<body>
+
+
+<div>
+
+    <div class="wrapper hover_collapse">
         <div class="top_navbar">
 
 
@@ -34,7 +40,7 @@
             <div class="sidebar_inner">
                 <ul>
                     <li>
-                        <a href="{{ route('userpage') }}">
+                        <a href="{{ ('userpage') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
                                     <path
@@ -55,6 +61,8 @@
                             <span class="text">Home</span>
                         </a>
                     </li>
+
+
                     <li>
                         <a href="{{ route('watchvideo') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -102,7 +110,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('todopage') }}">
+                        <a href="{{route('todopage')}}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -116,7 +124,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('download') }}">
+                        <a href="{{route('download')}}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-cloud-arrow-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -128,9 +136,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('contact') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                        <a href="{{route('contact')}}">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
                                     <path
                                         d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
                                 </svg></span>
@@ -150,128 +158,102 @@
                                         <path fill-rule="evenodd"
                                             d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
                                     </svg></span>
-                                Logout</button></button>
-                        </a>
+                                Logout</button> </a>
                     </li>
                 </ul>
 
             </div>
         </div>
     </div>
-
-
-    <div class="dark-mode-toggle">
-        <input type="checkbox" id="darkModeToggle">
-        <label for="darkModeToggle"></label>
     </div>
-
-
-
-    <div class="">
-        <div class="mx-auto col-md-5"> <!-- Profile widget -->
-            <div class="rounded shadow ">
-                <div class="">
-                    <img src="{{ $backgroundImageUrl }}" alt="Your Image"width="600" height="230"
-                        class="rounded img-thumbnail">
-
-                    <div class="media align-items-end profile-head">
-                        <div class="profile "><img src="{{ $imageUrl }}" alt="image" width="130"
-                                height="130" class="rounded img-thumbnail">
-                            <form action="{{ route('userpage.form') }}" method="post" onsubmit="doSomething()">
-                                @csrf
-                                <button id="dailyButton" class="btn btn-outline-secondary btn-sm btn-block"
-                                    type="submit">Upgrade XP</button>
-                            </form>
-                        </div>
-                        <div class="media-body ">
-                            <h4 class='mt-0 mb-0'> {{ $user->username }} </h4>
-
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4 text-center d-flex justify-content-end">
-
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">20</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-image"></i>Videos</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">215</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-image"></i>Photos</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">745</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-user"></i>Followers</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">340</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-user"></i>Following</small>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <h5>About</h5>
-
-
-            <p class='mb-0 font-italic'> {{ $user->date }} </p>
-
-            <br>
-            <p class='mb-0 font-italic'> {{ $user->gender }}</p>
-            <br>
-            <p class='mb-0 font-italic'>lvl {{ $user->lvl }}</p>
-            <br>
-            <p class='mb-0 font-italic'>xp {{ $user->experience }}</p>
-            <p class='mb-0 font-italic'>{{ $user->describe_yourself }}</p>
-
-            <br>
-            <br>
-
-            <div class="mb-3 d-flex align-items-center justify-content-between">
-                <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
-            </div>
-            <div class="row">
-                <div class="mb-2 col-lg-6 pr-lg-1"><img
-                        src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
-
-                <div class="mb-2 col-lg-6 pl-lg-1"><img
-                        src="https://images.unsplash.com/photo-1493571716545-b559a19edd14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
-                <div class="mb-2 col-lg-6 pr-lg-1"><img
-                        src="https://images.unsplash.com/photo-1453791052107-5c843da62d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
-                <div class="col-lg-6 pl-lg-1"><img
-                        src="https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
-            </div>
+    <div class="test">
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="darkModeToggle">
+            <label for="darkModeToggle"></label>
         </div>
-    </div>
-    </div>
-    </div>
 
-    </div>
+        <div>
 
 
-    </div>
-    </div>
-    </form>
+            <div class="chat_container">
 
-    <script>
-        document.getElementById('logoutBtn').addEventListener('click', function() {
+                <div class="chat_list_container">
 
-            var newUrl = {{ route('logout') }};
-            history.replaceState(null, null, newUrl);
+                    @livewire('chat.chat-list')
 
-            window.location.href = newUrl;
-        });
-    </script>
-    <script type="text/javascript" src="{{ asset('scripts/black.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('scripts/main.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('scripts/pagination_for_main.js') }}"></script>
+                </div>
+
+                <div class="chat_box_container">
+
+                    @livewire('chat.chatbox')
+
+                    @livewire('chat.send-message')
+                </div>
+            </div>
+
+
+            <script>
+                window.addEventListener('chatSelected', event => {
+
+                    if (window.innerWidth < 768) {
+
+                        $('.chat_list_container').hide();
+                        $('.chat_box_container').show();
+
+                    }
+
+                    $('.chatbox_body').scrollTop($('.chatbox_body')[0].scrollHeight);
+                let height= $('.chatbox_body')[0].scrollHeight;
+            //alert(height);
+            window.livewire.emit('updateHeight',{
+
+        height:height,
+
+
+            });
+                });
+
+
+                $(window).resize(function() {
+
+                    if (window.innerWidth > 768) {
+                        $('.chat_list_container').show();
+                        $('.chat_box_container').show();
+
+                    }
+
+                });
+
+
+                $(document).on('click', '.return', function() {
+
+                    $('.chat_list_container').show();
+                    $('.chat_box_container').hide();
+
+
+                });
+            </script>
+
+        <script>
+            // //let el= $('#chatBody');
+            // let el = document.querySelector('#chatBody');
+            // window.addEventListener('scroll', (event) => {
+            //     // handle the scroll event
+            //     alert('aasd');
+
+            // });
+            $(document).on('scroll','#chatBody',function() {
+                alert('aasd');
+
+                var top = $('.chatbox_body').scrollTop();
+                if (top == 0) {
+
+                    window.livewire.emit('loadmore');
+                }
+
+
+            });
+
+            </script>
+        </div>
 </body>
-
-</html>

@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class SocialMediaController extends Controller
 {
    public function socialmedia(){
-    return view("social_media");
+    return view("socialmedia");
    }
 }

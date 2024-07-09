@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('talkpage') }}">
+                        <a href="{{ route('chat') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                     <path

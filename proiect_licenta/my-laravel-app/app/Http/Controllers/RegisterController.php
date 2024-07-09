@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ceva;
 use App\Models\Logare;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
