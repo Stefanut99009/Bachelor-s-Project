@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="{{asset('css/black.css')}}">
   <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -123,13 +123,25 @@
     </div>
   </div>
 
-  <div class="test">
-    <div class="dark-mode-toggle">
-      <input type="checkbox" id="darkModeToggle">
-      <label for="darkModeToggle"></label>
+
+  <div class="container">
+    <div class="login form">
+
+        <form action="{{ route('post.form') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <label>Post only for watchvideo page</label>
+            <textarea name="text" id="text" title="anything that matches your character" rows="10"
+            cols="55">
+        </textarea>
+        <br>
+            <input type="file" class="form-control" name="video">
+            <input type="submit" class="button" value="All is setup">
+        </form>
     </div>
-    <p>C</p>
-  </div>
+    <script type="text/javascript" src="{{ asset('scripts/black.js') }}"></script>
+
+
+
   <script>
     document.getElementById('logoutBtn').addEventListener('click', function() {
 
@@ -139,7 +151,6 @@
       window.location.href = newUrl;
     });
   </script>
-  <script type="text/javascript" src="{{asset('scripts/black.js')}}"></script>
   <script type="text/javascript" src="{{asset('scripts/main.js')}}"></script>
   <script type="text/javascript" src="{{asset('scripts/pagination_for_main.js')}}"></script>
 

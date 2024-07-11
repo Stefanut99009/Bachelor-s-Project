@@ -137,11 +137,10 @@
                             <span class="text">Contact</span>
 
                         </a>
-                    </li><br><br><br><br><br>
+                    </li><br><br><br>
                     <li>
                         <a>
-                            <button id="logoutBtn"
-                                style="background:#303030;width:100%;left: 40px; height: 100%;text-align:left;color:white;">
+                            <a href="{{route('login')}}">
                                 <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-box-arrow-left"
                                         viewBox="0 0 16 16">
@@ -150,7 +149,7 @@
                                         <path fill-rule="evenodd"
                                             d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
                                     </svg></span>
-                                Logout</button></button>
+                                    <span class="text">Logout</span>
                         </a>
                     </li>
                 </ul>
@@ -269,7 +268,6 @@
             window.location.href = newUrl;
         });
     </script>
-    <script type="text/javascript" src="{{ asset('scripts/black.js') }}"></script>
     <script type="text/javascript" src="{{ asset('scripts/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('scripts/pagination_for_main.js') }}"></script>
 </body>

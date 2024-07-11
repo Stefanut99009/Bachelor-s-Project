@@ -21,7 +21,7 @@ class FormBeforeLogin extends Controller
 
         $validator = Validator::make($request->all(), [
             'lvl' => 'required|integer|min:1',
-            'username' => 'required|string|min:8',
+            'username' => 'required|string|min:1',
             'experience' => 'required|integer|min:0',
             'describe_yourself' => 'required|string|min:0',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',

@@ -16,7 +16,6 @@
     <label for="darkModeToggle"></label>
   </div>
   <div class="container">
-    <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
       @if (session('error'))
@@ -36,7 +35,6 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="{{ asset('scripts/black.js') }}"></script>
 </body>
 
 </html>

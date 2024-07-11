@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('image', 255)->nullable();
             $table->bigInteger('lvl')->nullable();
-            $table->string('username', 255)->nullable();
+            $table->string('username', 255)->nullable()->unique();
             $table->bigInteger('experience')->nullable();
             $table->string('background_image', 255)->nullable();
             $table->text('describe_yourself')->nullable();

@@ -28,6 +28,7 @@ Route::get('/download', [DownloadController::class, 'download'])->name('download
 
 Route::get('/mainpage', [MainPageController::class, 'mainpage'])->name('mainpage');
 Route::get('/post', [PostController::class, 'post'])->name('post');
+Route::post('/post', [PostController::class, 'put_post'])->name('post.form');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

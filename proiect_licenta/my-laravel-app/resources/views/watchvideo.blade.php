@@ -148,20 +148,23 @@
         </div>
 
         <div class="right">
+            @foreach($ceva as $uite)
             <div class="post">
                 <div class="post-info">
                     <div class="user">
-                        <img src="assets/Gypsi.jpg" alt="avatar">
+
+
+                        <img style="width:100px; height:100px" src="{{$uite->user_image}}" style="width:100px;height:100px;" alt="avatar">
                         <div>
-                            <h6>Gypsy</h6>
-                            <p>Cool Video</p>
+                            <h6>{{$uite->user_username}}</h6>
+                            <p>{{$uite->text}}</p>
                         </div>
                     </div>
                     <button>Follow</button>
                 </div>
                 <div class="post-content">
                     <video id="myvideo" autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
-                        <source src="assets/vid1.mp4" type="video/mp4">
+                        <source src="{{ Storage::url($uite->video) }}" type="video/mp4">
                     </video>
                     <div class="video-icons">
                         <a href="#"><i class="fas fa-heart fa-lg"></i><span>1.6K</span></a>
@@ -170,53 +173,13 @@
                     </div>
                 </div>
             </div>
-
-            <div class="post">
-                <div class="post-info">
-                    <div class="user">
-                        <img src="assets/Mona.jpeg" alt="avatar">
-                        <div>
-                            <h6>Frank</h6>
-                            <p>Cute cat</p>
-                        </div>
-                    </div>
-                    <button>Follow</button>
-                </div>
-                <div class="post-content">
-                    <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
-                        <source src="assets/vid2.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-icons">
-                        <a href="#"><i class="fas fa-heart fa-lg"></i><span>1.6K</span></a>
-                        <a href="#"><i class="fas fa-comment-dots fa-lg"></i><span>423</span></a>
-                        <a href="#"><i class="fas fa-share fa-lg"></i> <span>150</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="post-info">
-                    <div class="user">
-                        <img src="assets/pirate.jpg" alt="avatar">
-                        <div>
-                            <h6>Pirate</h6>
-                            <p>Amazing</p>
-                        </div>
-                    </div>
-                    <button>Follow</button>
-                </div>
-                <div class="post-content">
-                    <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
-                        <source src="assets/vid3.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-icons">
-                        <a href="#"><i class="fas fa-heart fa-lg"></i><span>1.6K</span></a>
-                        <a href="#"><i class="fas fa-comment-dots fa-lg"></i><span>423</span></a>
-                        <a href="#"><i class="fas fa-share fa-lg"></i> <span>150</span></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
+
+    </div>
+  </div>
+
+
     </main>
 
     <script>
@@ -228,7 +191,6 @@
               window.location.href = newUrl;
             });
           </script>
-          <script type="text/javascript" src="{{asset('scripts/black.js')}}"></script>
           <script type="text/javascript" src="{{asset('scripts/main.js')}}"></script>
           <script type="text/javascript" src="{{asset('scripts/pagination_for_main.js')}}"></script>
           <script type="text/javascript" src="{{asset('scripts/watchvideo.js')}}"></script>

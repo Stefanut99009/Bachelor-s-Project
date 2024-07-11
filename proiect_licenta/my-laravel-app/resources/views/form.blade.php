@@ -14,26 +14,16 @@
         <input type="checkbox" id="darkModeToggle">
         <label for="darkModeToggle"></label>
     </div>
-    <div class="registration form">
+    <div class="container">
+        <div class="login form">
         <header>Sign up</header>
-        @if (session('error'))
-            <div class="error">{{ session('error') }}</div>
-        @endif
-        @if ($errors->any())
-            <div class="error">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+
         <form action="{{ route('form') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="username" id="username" placeholder="Enter your username"
                 title="Example ceva nou" required>
             <textarea name="describe_yourself" id="describe_yourself" title="anything that matches your character" rows="10"
-                cols="100">
+                cols="55">
                 Ceva poate sa fie ceva vechi
                 altceva intotdeauna poate e ceva nou
             </textarea>
@@ -49,6 +39,5 @@
             <input type="submit" class="button" value="All is setup">
         </form>
     </div>
-    <script type="text/javascript" src="{{ asset('scripts/black.js') }}"></script>
 </body>
 </html>
