@@ -40,16 +40,7 @@
                             <span class="text">Your page</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('mainpage') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-dpad-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v3a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 6.5 16h3a1.5 1.5 0 0 0 1.5-1.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 16 9.5v-3A1.5 1.5 0 0 0 14.5 5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 9.5 0zm1.288 2.34a.25.25 0 0 1 .424 0l.799 1.278A.25.25 0 0 1 8.799 4H7.201a.25.25 0 0 1-.212-.382zm0 11.32-.799-1.277A.25.25 0 0 1 7.201 12H8.8a.25.25 0 0 1 .212.383l-.799 1.278a.25.25 0 0 1-.424 0Zm-4.17-4.65-1.279-.798a.25.25 0 0 1 0-.424l1.279-.799A.25.25 0 0 1 4 7.201V8.8a.25.25 0 0 1-.382.212Zm10.043-.798-1.278.799A.25.25 0 0 1 12 8.799V7.2a.25.25 0 0 1 .383-.212l1.278.799a.25.25 0 0 1 0 .424Z" />
-                                </svg></span>
-                            <span class="text">Home</span>
-                        </a>
-                    </li>
+
 
 
                     <li>
@@ -74,18 +65,7 @@
                             <span class="text">Friend talk</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('socialmedia') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-cast" viewBox="0 0 16 16">
-                                    <path
-                                        d="m7.646 9.354-3.792 3.792a.5.5 0 0 0 .353.854h7.586a.5.5 0 0 0 .354-.854L8.354 9.354a.5.5 0 0 0-.708 0" />
-                                    <path
-                                        d="M11.414 11H14.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h3.086l-1 1H1.5A1.5 1.5 0 0 1 0 10.5v-7A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v7a1.5 1.5 0 0 1-1.5 1.5h-2.086z" />
-                                </svg> </span>
-                            <span class="text">Social posts</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="{{ route('post') }}">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -134,11 +114,9 @@
                             <span class="text">Contact</span>
 
                         </a>
-                    </li><br><br><br><br><br>
+                    </li><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <li>
-                        <a>
-                            <button id="logoutBtn"
-                                style="background:#303030;width:100%;left: 40px; height: 100%;text-align:left;color:white;">
+                            <a href="{{route('login')}}">
                                 <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-box-arrow-left"
                                         viewBox="0 0 16 16">
@@ -147,7 +125,7 @@
                                         <path fill-rule="evenodd"
                                             d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
                                     </svg></span>
-                                Logout</button> </a>
+                                <span class="text">Logout</span></a>
                     </li>
                 </ul>
 

@@ -24,19 +24,14 @@ use App\Livewire\Chat\CreateChat;
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register.form');
-Route::get('/download', [DownloadController::class, 'download'])->name('download');
 
-Route::get('/mainpage', [MainPageController::class, 'mainpage'])->name('mainpage');
 Route::get('/post', [PostController::class, 'post'])->name('post');
 Route::post('/post', [PostController::class, 'put_post'])->name('post.form');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/socialmedia', [SocialMediaController::class, 'socialmedia'])->name('socialmedia');
-Route::get('/talkpage', [TalkPageController::class, 'talkpage'])->name('talkpage');
 Route::get('/form',[FormBeforeLogin::class,'ceva'])->name('form.form');
 Route::post('/form', [FormBeforeLogin::class,'altceva'])->name('form');
-Route::get('/todopage', [ToDoPageController::class, 'todopage'])->name('todopage');
 Route::get('/userpage', [UserPageController::class, 'userpage'])->name('userpage');
 Route::post('/userpage',[UserPageController::class,'ceva'])->name('userpage.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');

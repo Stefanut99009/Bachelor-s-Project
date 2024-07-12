@@ -14,9 +14,8 @@
         <input type="checkbox" id="darkModeToggle">
         <label for="darkModeToggle"></label>
     </div>
-    <div class="container">
+    <div class="container" style="margin-top:5%">
         <div class="login form">
-        <header>Sign up</header>
 
         <form action="{{ route('form') }}" method="POST" enctype="multipart/form-data">
             @csrf

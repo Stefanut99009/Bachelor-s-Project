@@ -64,6 +64,6 @@ class FormBeforeLogin extends Controller
         ]);
 
         Log::info('User registered successfully', ['user' => $form]);
-        return redirect()->route('userpage')->with('success', 'Registration successful. Please log in.');
+        return redirect()->route('login.form')->with('success', 'Registration successful. Please log in.');
     }
 }

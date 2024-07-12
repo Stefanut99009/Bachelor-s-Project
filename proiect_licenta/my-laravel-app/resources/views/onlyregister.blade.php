@@ -16,22 +16,13 @@
         <label for="darkModeToggle"></label>
     </div>
 
-    <div class="registration form">
+    <div class="container">
+        <div class="login form">
+
+
         <header>Sign up</header>
 
-        @if (session('error'))
-            <div class="error">{{ session('error') }}</div>
-        @endif
 
-        @if ($errors->any())
-            <div class="error">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
 
         <form action="{{ route('register') }}" method="POST">
             @csrf
