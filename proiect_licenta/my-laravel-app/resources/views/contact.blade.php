@@ -133,11 +133,7 @@
         </div>
     </div>
     </div>
-    <div class="test">
-        <div class="dark-mode-toggle">
-            <input type="checkbox" id="darkModeToggle">
-            <label for="darkModeToggle"></label>
-        </div>
+    
         <div class="everything">
             <div class="veva">
                 <div class="testimonial">
@@ -158,15 +154,7 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('logoutBtn').addEventListener('click', function() {
 
-            var newUrl = {{route('logout')}};
-            history.replaceState(null, null, newUrl);
-
-            window.location.href = newUrl;
-        });
-    </script>
 
     <script type="text/javascript" src="{{asset('scripts/main.js')}}"></script>
     <script type="text/javascript" src="{{asset('scripts/pagination_for_main.js')}}"></script>
