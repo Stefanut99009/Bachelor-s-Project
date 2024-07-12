@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="wrapper hover_collapse">
+    <div class="wrapper hover_collapse" >
 
         <div class="top_navbar">
 
@@ -147,7 +147,7 @@
 
         </div>
 
-        <div class="right">
+        <div class="right" style="width: 70%;">
             @foreach($ceva as $uite)
             <div class="post">
                 <div class="post-info">
