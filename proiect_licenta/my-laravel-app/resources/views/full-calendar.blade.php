@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/black.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
 
@@ -138,7 +137,7 @@
         </div>
     </div>
 
-   
+
 
     <script type="text/javascript" src="{{ asset('scripts/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('scripts/pagination_for_main.js') }}"></script>

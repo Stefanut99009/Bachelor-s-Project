@@ -7,13 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login & Registration Form</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/black.css') }}">
 </head>
 <body>
-    <div class="dark-mode-toggle">
-        <input type="checkbox" id="darkModeToggle">
-        <label for="darkModeToggle"></label>
-    </div>
+
     <div class="container" style="margin-top:5%">
         <div class="login form">
 
