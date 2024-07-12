@@ -36,6 +36,7 @@ class UserPageController extends Controller
             "date",
             "Date",
             "Work",
+            "work",
             "Sleep",
             "sleep",
             "exercise",

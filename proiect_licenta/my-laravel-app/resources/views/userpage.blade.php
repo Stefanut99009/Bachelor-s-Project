@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Page</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
@@ -34,8 +34,8 @@
                 <ul>
                     <li>
                         <a href="{{ route('userpage') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
                                     <path
                                         d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
                                     <path
@@ -49,9 +49,8 @@
 
                     <li>
                         <a href="{{ route('watchvideo') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-badge-hd-fill"
-                                    viewBox="0 0 16 16">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-badge-hd-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M10.53 5.968h-.843v4.06h.843c1.117 0 1.622-.667 1.622-2.02 0-1.354-.51-2.04-1.622-2.04" />
                                     <path
@@ -62,9 +61,8 @@
                     </li>
                     <li>
                         <a href="{{ route('chat') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-chat-dots-fill"
-                                    viewBox="0 0 16 16">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
                                 </svg></span>
@@ -74,9 +72,8 @@
 
                     <li>
                         <a href="{{ route('post') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-cloud-arrow-up"
-                                    viewBox="0 0 16 16">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z" />
                                     <path
@@ -87,9 +84,8 @@
                     </li>
                     <li>
                         <a href="{{ route('todopage') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-clipboard-check"
-                                    viewBox="0 0 16 16">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0" />
                                     <path
@@ -103,8 +99,8 @@
 
                     <li>
                         <a href="{{ route('contact') }}">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
                                     <path
                                         d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
                                 </svg></span>
@@ -114,16 +110,15 @@
                     </li><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <li>
 
-                            <a href="{{route('login')}}">
-                                <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-box-arrow-left"
-                                        viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
-                                        <path fill-rule="evenodd"
-                                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
-                                    </svg></span>
-                                <span class="text">Logout</span></a>
+                        <a href="{{ route('login') }}">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                                </svg></span>
+                            <span class="text">Logout</span></a>
 
                     </li>
                 </ul>
@@ -164,21 +159,10 @@
                 <div class="p-4 text-center d-flex justify-content-end">
 
                     <ul class="list-inline">
+
                         <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">20</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-image"></i>Videos</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">215</h5><small
+                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">2</h5><small
                                 class="text-muted"> <i class="mr-1 fas fa-image"></i>Photos</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">745</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-user"></i>Followers</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 style="color:black" class="mb-0 font-weight-bold d-block">340</h5><small
-                                class="text-muted"> <i class="mr-1 fas fa-user"></i>Following</small>
                         </li>
                     </ul>
                 </div>
@@ -204,19 +188,11 @@
                 <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
             </div>
             <div class="row">
-                <div class="mb-2 col-lg-6 pr-lg-1"><img
-                        src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
+                <div class="mb-2 col-lg-6 pr-lg-1"><img src="{{ $imageUrl }}" alt=""
+                        class="rounded shadow-sm img-fluid"></div>
 
-                <div class="mb-2 col-lg-6 pl-lg-1"><img
-                        src="https://images.unsplash.com/photo-1493571716545-b559a19edd14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
-                <div class="mb-2 col-lg-6 pr-lg-1"><img
-                        src="https://images.unsplash.com/photo-1453791052107-5c843da62d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
-                <div class="col-lg-6 pl-lg-1"><img
-                        src="https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                        alt="" class="rounded shadow-sm img-fluid"></div>
+                <div class="mb-2 col-lg-6 pl-lg-1"><img src="{{ $backgroundImageUrl }}" alt=""
+                        class="rounded shadow-sm img-fluid"></div>
             </div>
         </div>
     </div>

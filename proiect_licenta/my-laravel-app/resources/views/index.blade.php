@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Chat Laravel Pusher | Edlin App</title>
+    <title>Chat Formp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
