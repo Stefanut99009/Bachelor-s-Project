@@ -127,7 +127,6 @@
     </div>
     <div class="chat">
 
-        <!-- Header -->
         <div class="top">
             <img src="{{ $imageUrl }}" style=" width: 100px;
     height: 100px;" alt="Avatar">
@@ -136,23 +135,18 @@
 
             </div>
         </div>
-        <!-- End Header -->
 
-        <!-- Chat -->
         <div class="messages">
             @include('receive', ['message' => 'You can start the conversation'])
 
         </div>
-        <!-- End Chat -->
 
-        <!-- Footer -->
         <div class="bottom">
             <form>
                 <input type="text" id="message" name="message" placeholder="Enter message..." autocomplete="off">
                 <button type="submit"></button>
             </form>
         </div>
-        <!-- End Footer -->
 
     </div>
 </body>
@@ -163,7 +157,7 @@
     });
     const channel = pusher.subscribe('public');
 
-    //Receive messages
+
     channel.bind('chat', function(data) {
         $.post("/receive", {
                 _token: '{{ csrf_token() }}',
@@ -175,7 +169,6 @@
             });
     });
 
-    //Broadcast messages
     $("form").submit(function(event) {
         event.preventDefault();
 

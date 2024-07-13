@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ceva;
 use App\Models\Logare;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,7 +12,7 @@ class RegisterController extends Controller
 {
     public function showRegisterForm()
     {
-        return view('onlyregister'); // Make sure this view exists
+        return view('onlyregister'); 
     }
 
     public function register(Request $request)

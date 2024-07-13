@@ -29,7 +29,6 @@ Route::get('/post', [PostController::class, 'post'])->name('post');
 Route::post('/post', [PostController::class, 'put_post'])->name('post.form');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/form',[FormBeforeLogin::class,'ceva'])->name('form.form');
 Route::post('/form', [FormBeforeLogin::class,'altceva'])->name('form');
 Route::get('/userpage', [UserPageController::class, 'userpage'])->name('userpage');

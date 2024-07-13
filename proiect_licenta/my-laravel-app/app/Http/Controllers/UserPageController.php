@@ -22,7 +22,7 @@ class UserPageController extends Controller
         $imageUrl = Storage::url($user->image);
         $backgroundImageUrl = Storage::url($user->background_image);
 
-        // Update user experience
+      
 
 
         return view('userpage', compact('user', 'imageUrl', 'backgroundImageUrl'));
